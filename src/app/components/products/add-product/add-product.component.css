@@ -1,0 +1,92 @@
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+mat-label
+{
+    text-transform: capitalize;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.example-button-row button
+{
+margin-right: 8px;
+}
+div.container{
+  margin: 0px 40px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+form.normal-form{
+  margin: 10px;
+}
+
+.controles-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.controles-container > * {
+  width: 100%;
+  }
+
+  .add-bottom-padding{
+      padding-bottom: 10px;
+  }
+  /* radio group */
+mat-radio-group mat-radio-button{
+  margin-left: 5px;
+}
+
+.button-row button{
+  margin: 5px;
+}
+
+.loading
+{
+  max-height: 36px;
+  font-size: 25px;
+  color: #3f51b5
+}
+
+.mat-dialog-actions {
+  min-height: 30px!important;
+
+}
+.title
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title h4{
+  margin: 0!important;
+}
+.btn_save
+{
+  text-align: right;
+   margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+body[dir="rtl"] mat-form-field {
+  text-align: right;
+  float: right;
+}
+
+body[dir="rtl"] div{
+  /* float: right; */
+}

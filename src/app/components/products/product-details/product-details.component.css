@@ -1,0 +1,3 @@
+body[dir="rtl"] h3 , p{
+  /* float: right!important; */
+}

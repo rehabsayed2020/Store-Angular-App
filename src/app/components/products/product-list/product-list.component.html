@@ -1,0 +1,38 @@
+
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
+      fake API rate limit has been reached. It will be reset in one minute.
+    </div>
+  </div>
+
+
+  <div class="header-title">
+    <h2>{{'products' | translate}}</h2>
+  </div>
+
+  <div class="btn-add">
+    <button mat-raised-button (click)="onAdd()" class="addbtn">{{'Add product' | translate}}</button>
+  </div>
+
+
+  <div class="custom-page">
+    <div class="row m-0">
+      <div *ngIf="tableData.length > 0;else noData"
+        class="col-lg-12 mt-top-15 mainclass-tasks material-table-container p-0">
+        <app-product-table   [tableData]="tableData" [columnHeader]="columnHeader">
+        </app-product-table>
+      </div>
+      <ng-template #noData>
+        <div class="col-lg-12 mt-top-15 p-0 no-data">
+          {{noProducts}}
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,31 @@
+
+<div *ngIf="showdialog">
+
+
+<h2 mat-dialog-title>  {{'Product_Details' |translate}}</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>  {{'Title' |translate}}</h3>
+  <p>{{productdetails?.title}}</p>
+
+  <h3>description {{'Description' |translate}}</h3>
+  <p>{{productdetails?.description}}</p>
+
+  <h3> {{'Price' |translate}}</h3>
+  <p>{{productdetails?.price}}</p>
+
+  <h3> {{'Category' |translate}}</h3>
+  <p>{{productdetails?.category}}</p>
+
+  <h3> {{'Image' |translate}}</h3>
+  <div>
+    <img [src]="productdetails?.image" width="100" height="100"/>
+  </div>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>{{'close' |translate}}</button>
+</mat-dialog-actions>
+
+</div>

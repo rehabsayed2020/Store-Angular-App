@@ -1,0 +1,24 @@
+{
+  "products": "المنتجات",
+  "categories":"الفئات",
+  "Title": "العنوان",
+  "Description": "الوصف",
+  "Category": "الفئة",
+  "Price": "السعر",
+  "Image": "صورة",
+  "Action": "الإجراء",
+  "Add product": "أضافة منتج",
+  "logout": "خروج",
+  "choose_category":"اختار الفئه",
+  "No_product" : "لا يوجد منتجات حاليا",
+  "Add_new_product":"اضافة منتج جديد",
+  "save" : "حفظ",
+  "Product_Details":"تفاصيل المنتج",
+  "close" : "اغلق"
+
+
+
+
+
+
+}

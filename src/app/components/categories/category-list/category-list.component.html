@@ -1,0 +1,44 @@
+
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
+      fake API rate limit has been reached. It will be reset in one minute.
+    </div>
+  </div>
+  <div class="header-title">
+    <h2>{{'categories' | translate}}</h2>
+  </div>
+
+
+
+  <div class="example-table-container">
+    <mat-form-field appearance="fill" class="selectCat">
+      <mat-label>{{'choose_category' | translate}}</mat-label>
+      <mat-select
+        (selectionChange)="handleFilter($event)"
+        [(ngModel)]="selected"
+      >
+        <mat-option *ngFor="let category of categoriesList" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <div *ngIf="tableData.length > 0; else noData">
+      <app-product-table
+        [tableData]="tableData"
+        [columnHeader]="columnHeader"
+      ></app-product-table>
+    </div>
+
+    <ng-template #noData>
+      <div class="col-lg-12 mt-top-15 p-0 no-data">
+        {{ 'No_product' | translate}}
+      </div>
+    </ng-template>
+  </div>
+</div>

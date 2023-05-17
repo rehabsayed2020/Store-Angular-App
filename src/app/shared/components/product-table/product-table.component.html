@@ -1,0 +1,82 @@
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+	<input class="search-input-table" type="text" (keyup)="applyFilter($event.target.value)"
+        placeholder="Search {{ source | titlecase }}">
+    </div> -->
+    <!-- <p>{{'products' | translate}}</p> -->
+
+<div class="material-table-container">
+  <mat-table #table matSort [dataSource]="dataSource">
+    <ng-container
+      *ngFor="let column of columnHeader"
+      [cdkColumnDef]="column.columnDef"
+    >
+      <mat-header-cell
+        mat-sort-header
+        [disabled]="column.columnSort"
+        [hidden]="column.columnHide"
+        *cdkHeaderCellDef
+        >{{ column.header | translate }}</mat-header-cell
+      >
+    <ng-container [ngSwitch]="column.header">
+      <ng-container *ngSwitchCase="'Image'">
+        <mat-cell
+          class="flx-200"
+          [hidden]="column.columnHide"
+          title="{{ column.cell(row) }}"
+          *cdkCellDef="let row"
+        >
+          <img
+            class="img"
+            src="{{ row.image }}"
+            alt=""
+            width="50"
+            height="50"
+          />
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Action'">
+        <mat-cell
+        class="flx-200"
+        [hidden]="column.columnHide"
+        title="{{ column.cell(row) }}"
+        *cdkCellDef="let row"
+      >
+      <mat-icon (click)="datarow(row)">remove_red_eye</mat-icon>
+      <mat-icon (click)="deleteProduct(row.id)">delete</mat-icon>
+      <mat-icon>edit</mat-icon>
+      </mat-cell>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <mat-cell
+        class="flx-200"
+        [hidden]="column.columnHide"
+        title="{{ column.cell(row) }}"
+        *cdkCellDef="let row"
+      >
+        {{ column.cell(row) | slice : 0 : 20
+        }}{{ column.cell(row).length > 20 ? " ..." : "" }}
+      </mat-cell>
+      </ng-container>
+
+
+    </ng-container>
+
+
+
+
+
+    </ng-container>
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns; sticky: true"
+    ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator
+    class=""
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [hidePageSize]="true"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</div>

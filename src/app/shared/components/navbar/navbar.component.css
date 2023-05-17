@@ -1,0 +1,14 @@
+.navbar{
+  justify-content: end!important;
+}
+
+mat-toolbar div{
+  width: 50%;
+  display: flex;
+
+}
+
+.dropdown
+{
+    justify-content: end;
+}

@@ -1,0 +1,86 @@
+
+<div class="alert alert-success" role="alert" *ngIf="sucess">
+  The process was successful
+</div>
+
+<div class="dialog">
+
+
+  <div class="dialog__header">
+    <div class="title">
+      <h4> {{'Add_new_product' | translate}}</h4>
+      <button mat-button (click)="onNoClick()">
+        <span class="material-icons">
+          clear
+        </span>
+      </button>
+    </div>
+    <!-- <div mat-dialog-actions style="float: right;">
+
+    </div> -->
+  </div>
+  <form class="example-form" [formGroup]="creatNewProduct" (submit)="onSubmit()">
+
+
+    <mat-form-field>
+      <mat-label>{{'Title' |translate}}</mat-label>
+      <input matInput formControlName="title" [errorStateMatcher]="matcher" placeholder="enter title">
+      <mat-error *ngIf="creatNewProduct.controls['title'].hasError('required')">
+        title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="float: right;">
+      <mat-label>{{'Price' |translate}}</mat-label>
+      <input matInput formControlName="price" [errorStateMatcher]="matcher" placeholder="enter price" type="number">
+      <mat-error *ngIf="creatNewProduct.controls['price'].hasError('required')">
+        price is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label> {{'Description' |translate}}</mat-label>
+      <textarea  matInput formControlName="description" [errorStateMatcher]="matcher" placeholder="enter store description" rows="4" cols="5"></textarea>
+      <mat-error *ngIf="creatNewProduct.controls['description'].hasError('required')">
+        description  is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label> {{'Category' |translate}}</mat-label>
+      <mat-select  [(ngModel)]="categorySelected" formControlName="category">
+        <mat-option *ngFor="let category of categoriesList" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+
+      <mat-error *ngIf="creatNewProduct.controls['category'].hasError('required')">
+        category is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+
+
+
+
+
+    <!-- <div>
+      <mat-label>Image</mat-label><br>
+        <input formControlName="image" type="file" (change)="postMethod($any($event.target).files)"/>
+    </div> -->
+<br/>
+
+    <div class="example-button-row btn_save" >
+      <button type="submit" mat-raised-button color="primary" >
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw loading" ></i>
+        {{'save' |translate}}</button>
+      <!-- <button mat-raised-button color="warn" (click)="clearformvalue()">Clear</button> -->
+    </div>
+
+  </form>
+
+</div>
+

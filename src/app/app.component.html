@@ -1,0 +1,34 @@
+<!-- <li class="nav-item">
+  <a class="nav-link" [routerLink]="['/products']">
+    Products
+  </a>
+</li> -->
+
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Transalte</h1>
+      <label>
+        {{ "HOME.SELECT" | translate }}
+        <select #langSelect (change)="translate.use(langSelect.value)">
+          <option
+            *ngFor="let lang of translate.getLangs()"
+            [value]="lang"
+            [selected]="lang === translate.currentLang"
+          >
+            {{ lang }}
+          </option>
+        </select>
+      </label>
+      <hr />
+      <h2>{{ "HOME.TITLE" | translate }}</h2>
+    </div>
+  </div>
+</div> -->
+
+

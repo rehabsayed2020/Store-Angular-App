@@ -1,0 +1,18 @@
+{
+  "products": "Products",
+  "categories":"Categories",
+  "Title": "title",
+  "Description": "description",
+  "Category": "category",
+  "Price": "price",
+  "Image": "image",
+  "Action": "action",
+  "Add product": "Add product",
+  "logout": "Logout",
+  "choose_category":"choose category",
+  "No_product" : "No product available",
+  "Add_new_product":"Add new product",
+  "save" : "Save",
+  "Product_Details":"Product Details",
+  "close" : "Close"
+}
